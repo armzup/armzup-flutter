@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "441889478215",
+    "project_id": "armzup-app",
+    "storage_bucket": "armzup-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441889478215:android:023b6e943a20a58be6c362",
+        "android_client_info": {
+          "package_name": "armzup.com.armzup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMh1gzUZ9BFhBTdK35T42Y4xig20SQ0KQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
