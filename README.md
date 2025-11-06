@@ -1,4 +1,4 @@
 # armzup-flutter
-Flutter gym management application. 
+All in one flutter gym management application. 
 
 ArmpUp app coming soon...
