@@ -64,6 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '441889478215',
     projectId: 'armzup-app',
     storageBucket: 'armzup-app.firebasestorage.app',
+    androidClientId: '441889478215-8rbtobmopkpe1806dg2ifiocoaonsq41.apps.googleusercontent.com',
+    iosClientId: '441889478215-hbiu5nhsqp1b2i419mpepc1vunkeinea.apps.googleusercontent.com',
     iosBundleId: 'armzup.com.armzup',
   );
 
@@ -73,6 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '441889478215',
     projectId: 'armzup-app',
     storageBucket: 'armzup-app.firebasestorage.app',
+    androidClientId: '441889478215-8rbtobmopkpe1806dg2ifiocoaonsq41.apps.googleusercontent.com',
+    iosClientId: '441889478215-hbiu5nhsqp1b2i419mpepc1vunkeinea.apps.googleusercontent.com',
     iosBundleId: 'armzup.com.armzup',
   );
 
@@ -85,4 +89,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'armzup-app.firebasestorage.app',
     measurementId: 'G-QP5R812Z4C',
   );
+
 }

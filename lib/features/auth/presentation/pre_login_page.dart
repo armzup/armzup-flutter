@@ -38,18 +38,11 @@ class _PreLoginPageState extends State<PreLoginPage> {
   }
 
   void _goToSignup() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => const SignupPage()),
-    );
-  }
-
-  void _goToLogin() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => const LoginPage(role: 'owner')),
-    );
-  }
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (_) => const SignupPage()),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +56,7 @@ class _PreLoginPageState extends State<PreLoginPage> {
             Align(
               alignment: Alignment.topRight,
               child: TextButton(
-                onPressed: _goToLogin,
+                onPressed: _goToSignup,
                 child: const Text("Skip"),
               ),
             ),

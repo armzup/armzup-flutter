@@ -12,7 +12,20 @@
           "package_name": "armzup.com.armzup"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "441889478215-8rbtobmopkpe1806dg2ifiocoaonsq41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "armzup.com.armzup",
+            "certificate_hash": "4fb6ba94454d03c8d49f923cd99246ed1e87d412"
+          }
+        },
+        {
+          "client_id": "441889478215-llgcneohkes87jktt36n6t8llgvmr75e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDMh1gzUZ9BFhBTdK35T42Y4xig20SQ0KQ"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441889478215-llgcneohkes87jktt36n6t8llgvmr75e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "441889478215-hbiu5nhsqp1b2i419mpepc1vunkeinea.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "armzup.com.armzup"
+              }
+            }
+          ]
         }
       }
     }
