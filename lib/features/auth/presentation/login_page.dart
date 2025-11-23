@@ -1,6 +1,7 @@
+// lib/features/auth/presentation/login_page.dart
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
-import '../../dashboard/presentation/dashboard_page.dart';
+import '../../dashboard/presentation/main_page.dart'; // <- updated import
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (_) => DashboardPage(userId: cred.user!.uid),
+            builder: (_) => MainPage(userId: cred.user!.uid),
           ),
         );
       }
@@ -46,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (_) => DashboardPage(userId: cred.user!.uid),
+            builder: (_) => MainPage(userId: cred.user!.uid),
           ),
         );
       }

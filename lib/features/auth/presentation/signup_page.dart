@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
 import 'email_signup_page.dart';
 import 'profile_page.dart';

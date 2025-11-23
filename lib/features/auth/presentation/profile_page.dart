@@ -1,7 +1,8 @@
+// lib/features/auth/presentation/profile_page.dart
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../../dashboard/presentation/dashboard_page.dart';
+import '../../dashboard/presentation/main_page.dart'; // <- updated import
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -34,8 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) =>
-              DashboardPage(userId: FirebaseAuth.instance.currentUser!.uid),
+          builder: (_) => MainPage(userId: FirebaseAuth.instance.currentUser!.uid),
         ),
       );
     } catch (e) {
