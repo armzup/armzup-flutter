@@ -29,12 +29,16 @@ class DashboardService {
     return snapshot.docs.map((doc) => doc.data()).toList();
   }
 
-  /// Get subscription expiry date
+  /// Get subscription expiry date (reads expiryDate or fallback to endDate)
   Future<DateTime?> getSubscriptionExpiryDate() async {
     final doc = await _firestore.collection('subscriptions').doc(ownerId).get();
     if (!doc.exists) return null;
-    final timestamp = doc['endDate'] as Timestamp?;
-    return timestamp?.toDate();
+
+    final data = doc.data();
+    // Support both field names (expiryDate preferred)
+    final timestamp = data?['expiryDate'] ?? data?['endDate'];
+    if (timestamp == null) return null;
+    return (timestamp as Timestamp).toDate();
   }
 
   /// Calculate remaining days for subscription
@@ -45,18 +49,19 @@ class DashboardService {
     return days < 0 ? 0 : days;
   }
 
-  /// Renew subscription by adding days
+  /// Renew subscription by adding days (writes expiryDate)
   Future<void> renewSubscription({int days = 30}) async {
     final expiry = await getSubscriptionExpiryDate();
-    final newExpiry =
-    expiry != null && expiry.isAfter(DateTime.now())
+    final newExpiry = expiry != null && expiry.isAfter(DateTime.now())
         ? expiry.add(Duration(days: days))
         : DateTime.now().add(Duration(days: days));
 
-    await _firestore.collection('subscriptions').doc(ownerId).update({
-      'endDate': Timestamp.fromDate(newExpiry),
+    await _firestore.collection('subscriptions').doc(ownerId).set({
+      // write expiryDate for compatibility with SubscriptionService
+      'expiryDate': Timestamp.fromDate(newExpiry),
       'isActive': true,
       'isTrial': false,
-    });
+      'updatedAt': Timestamp.fromDate(DateTime.now()),
+    }, SetOptions(merge: true));
   }
 }
